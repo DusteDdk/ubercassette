@@ -1,7 +1,7 @@
-CC = gcc
-LD = gcc
+CC = gcc -m32
+LD = gcc -m32
 
-CFLAGS = -D LINUX -g -c 
+CFLAGS = -D LINUX -g -c
 CFLAGS += -D_DEBUG -DDUMP_RAW
 LDFLAGS = -Wl,-Map -Xlinker linkermap
 LIBS = -lm
@@ -13,6 +13,7 @@ all:	ubercassette
 
 clean:
 	rm *.o
+	rm linkermap
 	rm ubercassette
 
 ubercassette:  $(OBJS)
