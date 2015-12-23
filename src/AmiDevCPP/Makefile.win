@@ -1,0 +1,66 @@
+# Project: UberCassette
+# Compiler: i686-AROS
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ 6.10.2 on 16/03/11 17:13
+
+CPP       = i386-aros-g++.exe
+CC        = i386-aros-gcc.exe
+WINDRES   = windres.exe
+OBJ       = ../Acorn.o ../CBM.o ../main.o ../Sample.o ../T64.o ../TAP.o ../UEF.o ../WAV.o ../Amstrad.o ../CSW.o ../Spectrum.o ../TZX.o
+LINKOBJ   = ../Acorn.o ../CBM.o ../main.o ../Sample.o ../T64.o ../TAP.o ../UEF.o ../WAV.o ../Amstrad.o ../CSW.o ../Spectrum.o ../TZX.o
+LIBS      = -L"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/i386-aros/lib" -lm -noixemul  
+INCS      = -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/i386-aros/sys-include"
+CXXINCS   = -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/i386-aros/sys-include"
+RCINCS    = --include-dir "C:/CROSSC~1/AMIDEV~1/include"
+BIN       = UberCassette.exe
+DEFINES   =  -D_DUMP_RAW
+CXXFLAGS  = $(CXXINCS) $(DEFINES)   -O3
+CFLAGS    = $(INCS) $(DEFINES)   -O3
+GPROF     = gprof.exe
+RM        = rm -f
+LINK      = i386-aros-g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "UberCassette.exe" $(LIBS)
+
+../Acorn.o: $(GLOBALDEPS) ../Acorn.c
+	$(CC) -c ../Acorn.c -o ../Acorn.o $(CFLAGS)
+
+../CBM.o: $(GLOBALDEPS) ../CBM.c
+	$(CC) -c ../CBM.c -o ../CBM.o $(CFLAGS)
+
+../main.o: $(GLOBALDEPS) ../main.c
+	$(CC) -c ../main.c -o ../main.o $(CFLAGS)
+
+../Sample.o: $(GLOBALDEPS) ../Sample.c
+	$(CC) -c ../Sample.c -o ../Sample.o $(CFLAGS)
+
+../T64.o: $(GLOBALDEPS) ../T64.c
+	$(CC) -c ../T64.c -o ../T64.o $(CFLAGS)
+
+../TAP.o: $(GLOBALDEPS) ../TAP.c
+	$(CC) -c ../TAP.c -o ../TAP.o $(CFLAGS)
+
+../UEF.o: $(GLOBALDEPS) ../UEF.c
+	$(CC) -c ../UEF.c -o ../UEF.o $(CFLAGS)
+
+../WAV.o: $(GLOBALDEPS) ../WAV.c
+	$(CC) -c ../WAV.c -o ../WAV.o $(CFLAGS)
+
+../Amstrad.o: $(GLOBALDEPS) ../Amstrad.c
+	$(CC) -c ../Amstrad.c -o ../Amstrad.o $(CFLAGS)
+
+../CSW.o: $(GLOBALDEPS) ../CSW.c
+	$(CC) -c ../CSW.c -o ../CSW.o $(CFLAGS)
+
+../Spectrum.o: $(GLOBALDEPS) ../Spectrum.c
+	$(CC) -c ../Spectrum.c -o ../Spectrum.o $(CFLAGS)
+
+../TZX.o: $(GLOBALDEPS) ../TZX.c
+	$(CC) -c ../TZX.c -o ../TZX.o $(CFLAGS)
